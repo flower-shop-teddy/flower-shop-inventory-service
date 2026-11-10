@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.flowershop</groupId>
         <artifactId>flower-shop-parent</artifactId>
-        <version>0.2.0-SNAPSHOT</version>
+        <version>0.3.0-SNAPSHOT</version>
         <!-- Parent nằm ở repo flower-shop-platform.
              Trong workspace: Maven đọc thẳng file này (sửa platform là service thấy ngay).
              Clone repo này đứng riêng (CI, máy khác): file không tồn tại -> Maven tự lấy từ ~/.m2 / GitHub Packages. -->
@@ -15,7 +15,7 @@
 
     <artifactId>inventory-service</artifactId>
     <!-- Mỗi service có version riêng, release độc lập với service khác -->
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <name>inventory-service</name>
 
     <dependencies>
