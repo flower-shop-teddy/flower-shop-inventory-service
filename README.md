@@ -82,3 +82,12 @@ mvn verify     # cần Docker (Testcontainers bật Postgres thật)
 
 Merge PR `dev → production` thì GitHub Actions publish image `ghcr.io/flower-shop-teddy/flower-shop-inventory-service:X.Y.Z` và tạo tag `vX.Y.Z`.
 Chi tiết quy trình: README của repo `flower-shop-workspace`, mục "CI/CD và release".
+
+```bash
+docker run --rm -p 8084:8084 \
+  -e DB_URL=jdbc:postgresql://<host>:5432/inventory_db -e DB_USERNAME=inventory_user -e DB_PASSWORD=<...> \
+  -e EUREKA_URL=http://<eureka>:8761/eureka -e IDENTITY_JWKS_URI=http://<identity>:8083/.well-known/jwks.json \
+  ghcr.io/flower-shop-teddy/flower-shop-inventory-service:<version>
+```
+
+Cách đơn giản hơn để chạy cùng các service khác: `docker-compose.app.yml` ở repo workspace.
