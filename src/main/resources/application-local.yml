@@ -1,0 +1,16 @@
+# CHỈ dùng trên máy dev. Chạy với profile: local
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/inventory_db
+    username: inventory_user
+    password: inventory_pass_local
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+logging:
+  level:
+    com.flowershop: DEBUG
